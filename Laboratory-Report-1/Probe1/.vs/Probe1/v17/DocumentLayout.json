@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\University\\lab-sem4-operating-systems\\Laboratory-Report-1\\Probe1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{985C5C25-B1D8-4BA6-A245-4371784BFFC1}|Probe1.vcxproj|D:\\University\\lab-sem4-operating-systems\\Laboratory-Report-1\\Probe1\\Probe1.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{985C5C25-B1D8-4BA6-A245-4371784BFFC1}|Probe1.vcxproj|solutionrelative:Probe1.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Probe1.c",
+              "DocumentMoniker": "D:\\University\\lab-sem4-operating-systems\\Laboratory-Report-1\\Probe1\\Probe1.c",
+              "RelativeDocumentMoniker": "Probe1.c",
+              "ToolTip": "D:\\University\\lab-sem4-operating-systems\\Laboratory-Report-1\\Probe1\\Probe1.c",
+              "RelativeToolTip": "Probe1.c",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-02-18T14:35:23.727Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
