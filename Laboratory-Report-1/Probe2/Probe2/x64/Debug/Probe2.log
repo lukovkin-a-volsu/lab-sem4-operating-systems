@@ -1,0 +1,6 @@
+﻿  Probe2.c
+D:\University\lab-sem4-operating-systems\Laboratory-Report-1\Probe2\Probe2.c(1,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+  D:\University\lab-sem4-operating-systems\Laboratory-Report-1\Probe2\Probe2.c(1,1):
+  '_CRT_SECURE_NO_WARNINGS' previously declared on the command line
+  
+  Probe2.vcxproj -> D:\University\lab-sem4-operating-systems\Laboratory-Report-1\Probe2\x64\Debug\Probe2.exe
