@@ -3,8 +3,9 @@ D:\University\lab-sem4-operating-systems\Laboratory-Report-1\Probe1\Probe1.c(1,1
   D:\University\lab-sem4-operating-systems\Laboratory-Report-1\Probe1\Probe1.c(1,1):
   '_CRT_SECURE_NO_WARNINGS' previously declared on the command line
   
-D:\University\lab-sem4-operating-systems\Laboratory-Report-1\Probe1\Probe1.c(10,2): warning C4013: 'scanf_s' undefined; assuming extern returning int
-D:\University\lab-sem4-operating-systems\Laboratory-Report-1\Probe1\Probe1.c(12,2): warning C4013: 'printf' undefined; assuming extern returning int
-Probe1.obj : error LNK2001: unresolved external symbol scanf_s
-Probe1.obj : error LNK2001: unresolved external symbol printf
-D:\University\lab-sem4-operating-systems\Laboratory-Report-1\Probe1\x64\Release\Probe1.exe : fatal error LNK1120: 2 unresolved externals
+  Generating code
+  0 of 9 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Probe1.vcxproj -> D:\University\lab-sem4-operating-systems\Laboratory-Report-1\Probe1\x64\Release\Probe1.exe
