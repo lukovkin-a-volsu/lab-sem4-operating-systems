@@ -1,5 +1,6 @@
 @echo off
 
+echo.
 if "%1" == "" (
   echo Paths aren't set
   goto :EOF
