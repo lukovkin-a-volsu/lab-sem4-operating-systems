@@ -1,0 +1,4 @@
+﻿  CreateProcessApp.c
+D:\University\lab-sem4-operating-systems\Laboratory-Report-3\CreateProcessApp\CreateProcessApp.c(25,27): warning C4133: 'function': incompatible types - from 'char [39]' to 'LPWSTR'
+D:\University\lab-sem4-operating-systems\Laboratory-Report-3\CreateProcessApp\CreateProcessApp.c(28,3): warning C4098: 'main': 'void' function returning a value
+  CreateProcessApp.vcxproj -> D:\University\lab-sem4-operating-systems\Laboratory-Report-3\CreateProcessApp\x64\Debug\CreateProcessApp.exe
