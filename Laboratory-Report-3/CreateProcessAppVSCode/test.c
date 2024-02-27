@@ -12,13 +12,20 @@ int main(int argc, TCHAR* argv[])
 	//You are creating a new process(notepad.exe) from a parent process(your console application), and let parent process wait for child process to finish.The console window is the main window of your parent process.You can hide and restore is as show below.
 	//ShowWindow(GetConsoleWindow(), SW_HIDE);
 	STARTUPINFO si;
+	STARTUPINFO si1;
 	PROCESS_INFORMATION pi;
+	PROCESS_INFORMATION pi1;
 
 	ZeroMemory(&si, sizeof(si));
 	si.cb = sizeof(si);
 	ZeroMemory(&pi, sizeof(pi));
+	ZeroMemory(&si1, sizeof(si1));
+	si1.cb = sizeof(si1);
+	ZeroMemory(&pi1, sizeof(pi1));
 
-	char* app = "\"C:\\Windows\\notepad.exe\"";
+	char* app = "\"C:/Windows/notepad.exe\"";
+	//char* app = "\"C:/Program Files/WindowsApps/Microsoft.Paint_11.2311.30.0_x64__8wekyb3d8bbwe/PaintApp/mspaint.exe\"";
+	char* app1 = "cmd";
 
 	//"C:\\Program Files\\WindowsApps\\Microsoft.Paint_11.2311.30.0_x64__8wekyb3d8bbwe\\PaintApp\\mspaint.exe"
 	//"C:/Program Files/WindowsApps/Microsoft.Paint_11.2311.30.0_x64__8wekyb3d8bbwe/PaintApp/mspaint.exe"
@@ -40,6 +47,27 @@ int main(int argc, TCHAR* argv[])
 		printf("Error code: %lu\n", errorCode);
 		return 0;
 	}
+	SetPriorityClass(pi.hProcess, HIGH_PRIORITY_CLASS);
+
+	if (!CreateProcessA(NULL,   // No module name (use command line)
+		app1,        // Command line
+		NULL,           // Process handle not inheritable
+		NULL,           // Thread handle not inheritable
+		FALSE,          // Set handle inheritance to FALSE
+		CREATE_NEW_CONSOLE,              // No creation flags dwCreationFlags
+		NULL,           // Use parent's environment block
+		NULL,           // Use parent's starting directory 
+		&si1,            // Pointer to STARTUPINFO structure
+		&pi1)           // Pointer to PROCESS_INFORMATION structure
+		) {
+		DWORD errorCode = GetLastError();
+
+		// Print the error code to the console
+		printf("\nProcess Creation Error\n");
+		printf("Error code: %lu\n", errorCode);
+		return 0;
+	}
+	SetPriorityClass(pi1.hProcess, IDLE_PRIORITY_CLASS);
 
 
 	// Information about the running process
@@ -48,24 +76,67 @@ int main(int argc, TCHAR* argv[])
 	printf("Process descriptor: 0x%p\n", pi.hProcess);
 	printf("Primary thread id: %d\n", pi.dwThreadId);
 	printf("Primary thread descriptor: 0x%p\n", pi.hThread);
-
-	// Getting priority class of the process
+	// Getting priority class of the first process
 	DWORD priorityClass = GetPriorityClass(pi.hProcess);
 	if (priorityClass == 0) {
-		printf("Error when getting the priority class of the process: %d\n", GetLastError());
+		printf("Error when getting the priority class of the first process: %d\n", GetLastError());
 	}
 	else {
-		printf("Priority class of the process: %d\n", priorityClass);
+		printf("Priority class of the first process: %d\n", priorityClass);
 	}
 
 	if (!TerminateProcess(pi.hProcess, 0)) {
-		printf("Process ShutDown Error\n");
+		printf("The first process shutdown error\n");
 		return 0;
 	}
 
-	WaitForSingleObject(pi.hProcess, INFINITE);
-	CloseHandle(pi.hProcess);
-	CloseHandle(pi.hThread);
-	//ShowWindow(GetConsoleWindow(), SW_RESTORE);
+	// Information about the running process
+	printf("The second one\n");
+	printf("Process id: %d\n", pi1.dwProcessId);
+	printf("Process descriptor: 0x%p\n", pi1.hProcess);
+	printf("Primary thread id: %d\n", pi1.dwThreadId);
+	printf("Primary thread descriptor: 0x%p\n", pi1.hThread);
+	// Getting priority class of the second one
+	DWORD priorityClass1 = GetPriorityClass(pi1.hProcess);
+	if (priorityClass1 == 0) {
+		printf("Error when getting the priority class of the second process: %d\n", GetLastError());
+	}
+	else {
+		printf("Priority class of the second process: %d\n", priorityClass1);
+	}
+
+	if (!TerminateProcess(pi1.hProcess, 0)) {
+		printf("The second process shutdown error\n");
+		return 0;
+	}
+
+
+	//CloseHandle(pi.hThread);
+	//CloseHandle(pi1.hThread);
+	//// Array of handles to wait for
+	//HANDLE handles[2];
+	//handles[0] = pi.hProcess;  // Process handle for paint
+	//handles[1] = pi1.hProcess;  // Process handle for cmd
+	//DWORD result = WaitForMultipleObjects(2, handles, TRUE, INFINITE);
+	//if (result == WAIT_FAILED) {
+	//	printf("WaitForMultipleObjects failed: %d", GetLastError());
+	//	return 1;
+	//}
+	//switch (result) {
+	//case WAIT_OBJECT_0: // The first process handle
+	//	printf("Paint process terminated.");
+	//	break;
+	//case WAIT_OBJECT_0 + 1: // The second process handle
+	//	printf("Cmd process terminated.");
+	//	break;
+	//default:
+	//	printf("Unexpected result from WaitForMultipleObjects.");
+	//	return 1;
+	//}
+	//CloseHandle(pi.hProcess);
+	//CloseHandle(pi1.hProcess);
+
+	//WaitForSingleObject(pi.hProcess, INFINITE);
+
 	return 0;
 }
