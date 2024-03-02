@@ -1,0 +1,6 @@
+D:\University\lab-sem4-operating-systems\Laboratory-Report-2\a1\Red.tmp, Delete (Y/N)? Y 
+Deleted file - D:\University\lab-sem4-operating-systems\Laboratory-Report-2\a1\Red.tmp
+D:\University\lab-sem4-operating-systems\Laboratory-Report-2\a1\a2\green.tmp, Delete (Y/N)? 
+D:\University\lab-sem4-operating-systems\Laboratory-Report-2\a1\a2\red.tmp, Delete (Y/N)? 
+D:\University\lab-sem4-operating-systems\Laboratory-Report-2\b1\temp.tmp, Delete (Y/N)? Y 
+Deleted file - D:\University\lab-sem4-operating-systems\Laboratory-Report-2\b1\temp.tmp

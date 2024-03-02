@@ -1,16 +1,17 @@
 @echo off
 
 echo.
-if "%1" == "" (
-  echo Paths aren't set
+if "%1"=="" (
+  echo paths aren't set
   goto :EOF
 )
 
-:loop
-if "%1" == "" goto end
-del /S "%1\*.tmp" > protocol.txt
-shift
-goto :loop
-:end
+if exist protocol.txt del protocol.txt
 
-goto :EOF
+:loop
+if "%1"=="" goto end
+echo %1 is cleaning..
+echo Y | del /S /P "%1\*.tmp" >> protocol.txt
+shift
+goto loop
+:end
