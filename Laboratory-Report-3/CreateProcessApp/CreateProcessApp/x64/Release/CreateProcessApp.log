@@ -1,8 +1,8 @@
 ﻿  CreateProcessApp.c
-D:\University\lab-sem4-operating-systems\Laboratory-Report-3\CreateProcessApp\CreateProcessApp.c(40,3): warning C4133: 'function': incompatible types - from 'STARTUPINFO *' to 'LPSTARTUPINFOA'
-D:\University\lab-sem4-operating-systems\Laboratory-Report-3\CreateProcessApp\CreateProcessApp.c(60,3): warning C4133: 'function': incompatible types - from 'STARTUPINFO *' to 'LPSTARTUPINFOA'
+D:\University\lab-sem4-operating-systems\Laboratory-Report-3\CreateProcessApp\CreateProcessApp.c(37,3): warning C4133: 'function': incompatible types - from 'STARTUPINFO *' to 'LPSTARTUPINFOA'
+D:\University\lab-sem4-operating-systems\Laboratory-Report-3\CreateProcessApp\CreateProcessApp.c(57,3): warning C4133: 'function': incompatible types - from 'STARTUPINFO *' to 'LPSTARTUPINFOA'
   Generating code
-  1 of 4 functions (25.0%) were compiled, the rest were copied from previous compilation.
+  4 of 4 functions (100.0%) were compiled.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

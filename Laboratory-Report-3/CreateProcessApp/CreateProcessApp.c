@@ -8,9 +8,6 @@ int main(int argc, TCHAR* argv[])
 {
 	//https://learn.microsoft.com/en-us/windows/win32/procthread/creating-processes
 	//https://learn.microsoft.com/en-us/cpp/code-quality/c6277?view=msvc-170
-
-	//You are creating a new process(notepad.exe) from a parent process(your console application), and let parent process wait for child process to finish.The console window is the main window of your parent process.You can hide and restore is as show below.
-	//ShowWindow(GetConsoleWindow(), SW_HIDE);
 	STARTUPINFO si;
 	STARTUPINFO si1;
 	PROCESS_INFORMATION pi;
@@ -109,34 +106,6 @@ int main(int argc, TCHAR* argv[])
 		printf("The second process shutdown error\n");
 		return 0;
 	}
-
-
-	//CloseHandle(pi.hThread);
-	//CloseHandle(pi1.hThread);
-	//// Array of handles to wait for
-	//HANDLE handles[2];
-	//handles[0] = pi.hProcess;  // Process handle for paint
-	//handles[1] = pi1.hProcess;  // Process handle for cmd
-	//DWORD result = WaitForMultipleObjects(2, handles, TRUE, INFINITE);
-	//if (result == WAIT_FAILED) {
-	//	printf("WaitForMultipleObjects failed: %d", GetLastError());
-	//	return 1;
-	//}
-	//switch (result) {
-	//case WAIT_OBJECT_0: // The first process handle
-	//	printf("Paint process terminated.");
-	//	break;
-	//case WAIT_OBJECT_0 + 1: // The second process handle
-	//	printf("Cmd process terminated.");
-	//	break;
-	//default:
-	//	printf("Unexpected result from WaitForMultipleObjects.");
-	//	return 1;
-	//}
-	//CloseHandle(pi.hProcess);
-	//CloseHandle(pi1.hProcess);
-
-	//WaitForSingleObject(pi.hProcess, INFINITE);
 
 	return 0;
 }
