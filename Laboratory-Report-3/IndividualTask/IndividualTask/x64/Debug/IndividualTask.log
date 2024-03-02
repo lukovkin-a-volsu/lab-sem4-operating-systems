@@ -1,0 +1,5 @@
+﻿  main.c
+D:\University\lab-sem4-operating-systems\Laboratory-Report-3\IndividualTask\main.c(46,8): warning C4101: 'idThreadC': unreferenced local variable
+D:\University\lab-sem4-operating-systems\Laboratory-Report-3\IndividualTask\main.c(91,8): warning C4090: 'initializing': different 'const' qualifiers
+D:\University\lab-sem4-operating-systems\Laboratory-Report-3\IndividualTask\main.c(98,1): warning C4716: 'ThreadFunc': must return a value
+  IndividualTask.vcxproj -> D:\University\lab-sem4-operating-systems\Laboratory-Report-3\IndividualTask\x64\Debug\IndividualTask.exe
