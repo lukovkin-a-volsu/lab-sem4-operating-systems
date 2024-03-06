@@ -40,12 +40,14 @@ int main(int argc, TCHAR* argv[])
 	}
 
 	// WaitForSingleObject(hThreadA, INFINITE);
-	//WaitForSingleObject(hThreadA, 1000); // optional
-	WaitForSingleObject(hThreadB, INFINITE);
+	//WaitForSingleObject(hThreadA, 5000); // optional
+	//WaitForSingleObject(hThreadB, INFINITE);
 
 
-	TerminateThread(hThreadA, 0);
+	Sleep(1000);
 	TerminateThread(hThreadB, 0);
+	Sleep(1000);
+	TerminateThread(hThreadA, 0);
 
 	return 0;
 }

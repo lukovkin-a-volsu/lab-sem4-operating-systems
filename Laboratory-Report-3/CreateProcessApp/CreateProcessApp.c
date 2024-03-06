@@ -6,6 +6,13 @@
 
 int main(int argc, TCHAR* argv[])
 {
+	// ABOVE_NORMAL_PRIORITY_CLASS (0x00008000): 32768
+	// BELOW_NORMAL_PRIORITY_CLASS (0x00004000): 16384
+	// HIGH_PRIORITY_CLASS (0x00000080): 128
+	// IDLE_PRIORITY_CLASS (0x00000040): 64
+	// NORMAL_PRIORITY_CLASS (0x00000020): 32
+	// REALTIME_PRIORITY_CLASS (0x00000100): 256
+
 	//https://learn.microsoft.com/en-us/windows/win32/procthread/creating-processes
 	//https://learn.microsoft.com/en-us/cpp/code-quality/c6277?view=msvc-170
 	STARTUPINFO si;
@@ -20,8 +27,9 @@ int main(int argc, TCHAR* argv[])
 	si1.cb = sizeof(si1);
 	ZeroMemory(&pi1, sizeof(pi1));
 
-	char* app = "\"C:/Windows/notepad.exe\"";
+	//char* app = "\"C:/Windows/notepad.exe\"";
 	//char* app = "\"C:/Program Files/WindowsApps/Microsoft.Paint_11.2311.30.0_x64__8wekyb3d8bbwe/PaintApp/mspaint.exe\"";
+	char* app = "C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps\\mspaint.exe";
 	char* app1 = "cmd";
 
 	//"C:\\Program Files\\WindowsApps\\Microsoft.Paint_11.2311.30.0_x64__8wekyb3d8bbwe\\PaintApp\\mspaint.exe"

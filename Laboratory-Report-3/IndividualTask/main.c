@@ -13,7 +13,7 @@ typedef struct {
 } ThreadParams;
 
 int compareThreads(const void* a, const void* b) {
-	return (*(int*)a - *(int*)b);
+	return (*(int*)b - *(int*)a);
 }
 
 int main(int argc, TCHAR* argv[])
@@ -29,6 +29,7 @@ int main(int argc, TCHAR* argv[])
 			0,
 			&idThreadA
 		);
+	WaitForSingleObject(hThreadA, INFINITE);
 
 	DWORD idThreadB;
 	ThreadParams paramsB = { 2 };
@@ -41,6 +42,7 @@ int main(int argc, TCHAR* argv[])
 			0,
 			&idThreadB
 		);
+	WaitForSingleObject(hThreadB, INFINITE);
 
 	DWORD idThreadC;
 	ThreadParams paramsC = { 3 };
@@ -53,6 +55,7 @@ int main(int argc, TCHAR* argv[])
 			0,
 			&idThreadB
 		);
+	WaitForSingleObject(hThreadC, INFINITE);
 
 
 	if (!SetThreadPriority(hThreadB, THREAD_PRIORITY_ABOVE_NORMAL)) {
@@ -62,9 +65,6 @@ int main(int argc, TCHAR* argv[])
 		printf("Failed to set hThreadC priority");
 	}
 
-	WaitForSingleObject(hThreadA, INFINITE);
-	WaitForSingleObject(hThreadB, INFINITE);
-	WaitForSingleObject(hThreadC, INFINITE);
 
 	const size_t size = 3;
 	int* threadsPriorities = (int*)malloc(size * sizeof(int));
@@ -91,7 +91,7 @@ DWORD WINAPI ThreadFunc(LPVOID lpParam) {
 
 	printf("A new thread has been created\n");
 	printf("Ordinal number (by creating): %d\n", params->ordinal);
-	printf("Ordinal number (by launching): %d\n", num++);
+	//printf("Ordinal number (by launching): %d\n", num++);
 	printf("Current Thread ID: %lu\n", threadId);
 	printf("Priority: %s\n", priorityString);
 }

@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A1183EC7-5290-4FC7-A493-375B9D4BDBBD}|CreateProcessApp.vcxproj|D:\\University\\lab-sem4-operating-systems\\Laboratory-Report-3\\CreateProcessApp\\CreateProcessApp.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A1183EC7-5290-4FC7-A493-375B9D4BDBBD}|CreateProcessApp.vcxproj|solutionrelative:CreateProcessApp.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\University\\lab-sem4-operating-systems\\Laboratory-Report-3\\CreateProcessApp\\CppProperties.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CppProperties.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CppProperties.json",
+              "DocumentMoniker": "D:\\University\\lab-sem4-operating-systems\\Laboratory-Report-3\\CreateProcessApp\\CppProperties.json",
+              "RelativeDocumentMoniker": "CppProperties.json",
+              "ToolTip": "D:\\University\\lab-sem4-operating-systems\\Laboratory-Report-3\\CreateProcessApp\\CppProperties.json",
+              "RelativeToolTip": "CppProperties.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-05T17:42:50.081Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +40,7 @@
               "RelativeDocumentMoniker": "CreateProcessApp.c",
               "ToolTip": "D:\\University\\lab-sem4-operating-systems\\Laboratory-Report-3\\CreateProcessApp\\CreateProcessApp.c",
               "RelativeToolTip": "CreateProcessApp.c",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAYAAAA",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAAAEIAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-02-27T18:32:39.661Z",
               "EditorCaption": ""
