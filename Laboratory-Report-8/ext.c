@@ -2,34 +2,41 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void AllocateAndFillMemory(long long size, long long chunkSize);
+void AllocateAndFillMemory(size_t, size_t);
 
-#define GB (1024LL*1024LL*1024LL)
-#define MB (1024LL*1024LL)
-#define KB (1024LL)
+#define GB (1024ULL * 1024ULL * 1024ULL)
+#define MB (1024ULL * 1024ULL)
+#define KB (1024ULL)
 
 int main()
 {
-  long long size, chunkSize, limit;
-  size = 1 * GB;
-  chunkSize = 256 * MB;
-  limit = 10 * GB;
+  size_t size, chunkSize, limit;
+  // size = 1 * GB;
+  // chunkSize = 256 * MB;
+  // limit = 10 * GB;
   // laptop
-  // size = 256 * KB;
-  // chunkSize = 128 * KB;
-  // limit = 2 * GB;
+  // size = 1ULL * MB;
+  // chunkSize = 128ULL * KB;
+  // limit = 4LL * GB;
 
-  while (size < limit)
+  puts("Min chunkSize in MB: ");
+  scanf("%zu", &size); size *= MB;
+  puts("Max limit in GB: ");
+  scanf("%zu", &limit); limit *= GB;
+  system("cls");
+
+  while (size <= limit)
   {
-    printf("Size: %lld GB.\n", size / GB);
+    // printf("Size: %lld GB.\n", size / GB);
+    printf("Size: %llu/%llu MB.\n", size / MB, limit / MB);
     AllocateAndFillMemory(size, chunkSize);
-    size *= 2;
-    chunkSize *= 2;
+    size *= 2ULL;
+    chunkSize *= 2ULL;
   }
   return 0;
 }
 
-void AllocateAndFillMemory(long long size, long long chunkSize)
+void AllocateAndFillMemory(size_t size, size_t chunkSize)
 {
   LPVOID address;
   DWORD start, end, elapsed;
@@ -43,12 +50,12 @@ void AllocateAndFillMemory(long long size, long long chunkSize)
 
   start = GetTickCount();
 
-  for (int i = 0; i < size; i++)
+  size_t *arr = address;
+  for (size_t i = 0; i < size / sizeof(size); i++)
   {
-    ((char *)address)[i] = rand() % 256;
-    
+    arr[i] = i;
     // if (i % chunkSize == 0)
-      // printf("Filled %lu kilobytes\n", i / 1024);
+    // printf("Filled %lu kilobytes\n", i / 1024);
   }
 
   end = GetTickCount();
